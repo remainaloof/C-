@@ -1,0 +1,92 @@
+using System.Runtime.InteropServices;
+
+namespace ho
+{
+    using System;
+    class Score
+    {
+        static void Main()
+        {
+            int s = 65;
+
+            Console.WriteLine("당신의 점수는" + s + "점입니다.");
+
+            if (s <70)
+            {
+                Console.WriteLine("평균까지 앞으로" + (70 - s) + "점");
+                Console.WriteLine("분발하다!");
+
+            }
+            else
+            {
+                Console.WriteLine("잘 했습니다!");
+            }
+        }
+
+    }
+
+}
+
+--------------------------------------------------------------------------
+
+Q. 수달이 좋아하는 음식은?
+1. 미꾸라지
+2. 메기
+3. 배스
+4. 피라미
+5. 새우
+6. 샤료
+7. 닭고기
+
+정답: 12345
+단. 새우를 먹은 날엔 수달 똥이 붉어요.
+
+오답: 67
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+Console.WriteLine("Q.수달이 좋아하는 음식은?")
+using System;
+
+namespace Consoleapp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int answer;
+            Console.WriteLine("Q.수달이 좋아하는 음식은?");
+            Console.WriteLine("1.미꾸라지");
+            Console.WriteLine("2.메기");
+            Console.WriteLine("3.배스");
+            Console.WriteLine("4.피라미");
+            Console.WriteLine("5.새우");
+            Console.WriteLine("6.사료");
+            Console.WriteLine("7.닭고기");
+
+
+
+            answer = int.Parse(Console.ReadLine());
+
+            if (answer ==1 && answer ==2 && answer==3 && answer ==4 && answer ==5)
+            {
+                if (answer ==5)
+                    Console.WriteLine("새우도 가끔 먹지만 새우를 먹은 날엔 수달 똥이 붉다.");
+                else
+                    Console.WriteLine("정답입니다");
+            }
+            else
+                Console.WriteLine("오답입니다.");
+
+
+        }
+    }
+}
+
+---------------------------------------------------------------------------------
