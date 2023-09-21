@@ -1,0 +1,416 @@
+learn - online C# compiler
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+
+
+//주석 (Coment) 1줄 기준으로 주석 처리
+//using ㅁ; 프로그램 코드 내에서 ㅁ에 대한 값들을 사용하겠다는 의미입니다.
+//public class helloWorld : 파일의 이름
+                           // 클래스는 C# 파일의 기본 단위
+                           // 프로그램 내에서 사용되는 데이터 객체에 대한 틀
+ 
+ 
+ 
+ 
+ ------------------------------------------------// public static void Main(string [] args ):----------------------------------------------------------------
+ //일단 C#에서 프로그램 코드가 실행되는 영역
+  
+ // Console.Write / WriteLine : 문장 출력용 코드 
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+using System;
+//System 에 대한 내용을 프로그램 코드에서 사용하겠습니다.
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.Write ("Hello Mono World");
+        Console.Write ("Welcome to unity");
+        
+    }
+    //명령 프롬포트 - 콘솔 - write 출력 line "__적고싶은 말"
+    //Line 을 빼고 write 만 적게 되면 안에 있는 내용들이 가로로 붙어서 출력 된다.
+
+    자료형 (Type) : 컴퓨터가 데이터를 판단하는 기준
+    자주 쓰이는 자료형 
+    * int : 정수형 +- 
+    * float : 소수점 포함 실수형, 소수점 6자리까지는 나름 정확하게 계산되어있음. 
+    * bool : 논리형 : 프로그램 내에서 참과 거짓을 판단하는 데이터 - true . false
+    * string 문자형 클래스 ; 프로그램 내에서 문장에 대한 표현을 진행할 수 있고 문장에 관련된 기능들을 가지고 있습니다.
+    
+
+    
+using System;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int  a;
+            //정수형 데이터 변수 a룰 선언합니다.
+
+            int  b;
+            a=2;
+            //a에 2의 값을 대입합니다 =  (초기화 : Initiaize)합니다.     (Equal X 같다는 말이 아닌, 대입한다는 의미)
+            
+            //같다의 의미는 == 
+            
+            //a+=2;
+            //a에 2의값을 <더해서> 대입하세요.
+             
+            b=3;
+            a=b;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ----------------------------------------------------------------------------------------------------------------------------------------
+            //문장 데이터 변수 name을 선언합니다. 문장을 표현할 때 (" ")
+            string  name;
+            name = "Jack";
+            //string 뒤에 곧바로 숫자가 나오는 건 안 됨.
+            //+ - @  같은 특수문자가 오면 안 됨
+            // User_name 언더바 이름 구분 기능은 됨
+
+
+            Console.WriteLine(name);
+            Console.WriteLine(a);
+        }
+    }
+}
+
+String 문자형 클래스 : 프로그램 내에서 문장에 대한 표현을 진행할 수 있고, 문장에 관련된 기능들을 가지고 있습니다.
+
+변수의 생성 규칙
+1. 이름 길이에 대한 제한은 따로 없으나, 최대한 알아보기 쉽게 직관적으로 적는게 일반적입니다. ( 암묵적인 룰 )
+2. 변수의 이름으로 앞에 숫자가 나올 수 없습니다.
+3. 변수의 이름으로 특수문자를 사용할 수 없습니다.( 단 일부 예외는 존재)
+4. 변수의 이름으로 키워드를 사용할 수 없습니다.
+  키워드란 영단어로 된 기능을 가진 것을 ex) int
+
+  using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            name = Console.ReadLine();
+            // 문장을 입력하는 기능 <숫자는 불가능>
+            
+            Console.WriteLine("이름 : " + name);
+// ReadLine - 
+        }
+    }
+}
+
+// 콘솔창이 뜨면 그곳에 내 이름을 적으면
+조한홍
+이름 : 조한홍
+이렇게 뜰 수 있는 시스템
+  
+  
+          *   Console.Write("이름을 입력해주세요>>"); 를 추가하면 
+             string name;
+             name = Console.ReadLine();
+             // 문장을 입력하는 기능 <숫자는 불가능>
+            
+             Console.WriteLine("이름 : " + name);
+
+
+
+           //나이를 입력하는  코드 작성
+         
+          *  Console.Write("나이를 입력해주세요>>");
+            int age;
+            age  = int.Parse(Console.ReadLine());
+             Console.WriteLine("나이 : " + age);
+            
+            // 숫자를 입력하기 위함
+            // int.Parse(Console.ReadLine());
+
+
+ //Console.ReadLine : 문장 입력 진행
+
+ //<< int.parse( 변경할 내용)>> : 해당 데이터 형태로 변환하는 기능
+ 
+= readline 문자만 오는건데  int(숫자)  못와서 parse 를 붙이는 것.
+
+
+
+            // 원하는 타이밍에 명령 집어넣기 (제어문)
+            // 만약에 체력이 0이거나 0보다 작다면, 게임 오버를 출력합니다.
+
+            int hp = -50;
+            if(hp <= 0)
+            {
+                Console.WriteLine("GAME OVER");
+
+
+            }
+
+
+-------------------------------------------------------------------------------
+              int hp = 50;
+            if(hp <= 0)
+            {
+                Console.WriteLine("GAME OVER");
+
+hp가 -50 이면 game over가 뜨게 되고
+hp가 50이면 0 이상이기 때문에 hp값이 출력되도록 한 것.
+            }
+            // 그렇지 않다면, 체력을 출력하겠습니다.
+            else
+            {
+                Console.WriteLine(hp);
+            }
+----------------------------------------------------------------------------------
+
+
+
+  if(조건식)
+  {
+  조건식의 결과가 만족 할 때 실행할 명령문;
+  }
+  else if (조건식2)
+  {
+  위의 조건식의 결과가 만족하지 않고,
+  새로운 조건식2의 결과가 만족하는 경우 실행할 명령문;
+  }
+  else
+  {
+  위에 있는 if, else if 문의 조건이 만족하지 않는 경우에 실행할 명령문;
+  }
+
+  조건식에서 사용되는 연산자
+  a>b , a<b , a>=b, a<=b , a==b ( a와 b가 서로 같습니다.) 
+  a != b (a와 b가 서로 다릅니다.)
+
+  -----------------------------------------------------------------------------------
+
+  수업에 따라 작업
+  연습문제 풀어보기
+  본인 설계에 의한 실습
+  지난 수업에 대한 복기
+  --------------------------------------------------------------------------------------
+  
+  
+  
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            //BMI 프로그램
+            //필요한 변수 : 몸무게(kg), 키(cm) / (m) , BMI 수치
+            //BMI의 공식 : kg / m*m
+
+            float kg, cm, m, BMI;
+
+            Console.Write("키(cm)를 입력해주세요 >> ");
+            cm = float.Parse(Console.ReadLine());
+            Console.Write("몸무게(kg)를 입력해주세요 >>");
+            kg = float.Parse(Console.ReadLine());
+
+            m = cm * 0.01f;
+            BMI = kg /(m * m);
+            
+// m*m 먼저 계산시켜야 정확하게 나올 때 () 쳐줘서 먼저 계산 가능하게 해주기
+
+            //m*m =(float)Math.Pow(m,2);
+
+            Console.WriteLine($"BMI 지수 : {BMI}");
+            //  없이해결 하는 $ 달러 붙이고 작업 하는 문자열 보간 기능
+            //$"문장 {데이터}" , 데이터 = 변수
+
+
+
+
+-------------------------------------------------------------------------------------------------
+ Console.WriteLine($"BMI 지수 : {BMI:F2}");
+
+BMI:F2 소수점 둘째 자리 까지 라는 뜻
+
+
+
+
+ 
+            //  없이해결 하는 $ 달러 붙이고 작업 하는 문자열 보간 기능
+            //$"문장 {데이터}" , 데이터 = 변수
+
+
+
+-------------------------------------------------------------------------------------------------
+                //1m=100cm , 1cm=0.01m
+                // 비만도 결과에 대한 조건
+                //BMI 18.5 보다 작은 경우 저체중
+                //BMI >=18.5 &&   BMI<23 정상
+                //BMI > 23 && BMI <= 25 과체중
+                //BMI > 25 : 비만
+
+
+-----------------------------------------------------------------------------------------------
+
+ // 조건에 따른 비만도 결과 처리
+            if(BMI < 18.5)
+            {
+                result = "저체중";
+
+            }
+            else if(BMI <+ 18.5 && BMI <= 23 )
+            {
+                result = "정상";
+
+            }
+            else if (BMI > 23 && BMI <= 25)
+            {
+
+                result = "과체중";
+            }
+            else
+            {
+
+                result = "비만";
+            }
+
+
+
+
+
+--------------------------------------------- 코딩 결과 -----------------------------------
+키(cm)를 입력해주세요 >> 164
+몸무게(kg)를 입력해주세요 >>63
+비만도 결과 :
+BMI 지수 : 23.42
+
+----------------------------------------------------------------------------------------------
+
+교재 p.87
+01.
+data 라는 변수가 있습니다. 이 변수에 저장된 값이 90점 이상은 수, 80점 이상은 우, 70점 이상은 미,
+60점 이하는 가라는 프로그램을 제작해 보십시오 
+(If ~ else 문 이용)
+
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+            int data = int.Parse(Console.ReadLine());
+
+
+
+            if (data >= 90)
+           
+            {
+                Console.WriteLine("수");
+
+            }
+
+
+            else if (data>=80)
+            {
+                Console.WriteLine("우");
+
+            }
+            else if (data>=70)
+            {
+                
+                Console.WriteLine("미");
+
+                
+            }
+             else
+            {
+                Console.WriteLine("양");
+            }
+
+
+
+        }
+    }
+}
+
+
+
+
+
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+            Console.Write("본인의 Lv을 입력해주세요.");
+
+            int lv = int.Parse(Console.ReadLine());
+            
+            if (lv>= 20)
+
+            {
+                Console.WriteLine("Let's Go Together!");
+
+            }
+
+            else
+            {
+                Console.WriteLine("See you next time");
+            }
+            Console.WriteLine("준비 되었다면 1, 준비되지 않았으면 2를 입력해 주세요");
+            int enter = int.Parse(Console.ReadLine());
+            
+           if (enter ==1 )
+            {
+                Console.WriteLine("입장");
+            }
+           else if (enter ==2)
+            {
+                Console.WriteLine("입장불가");
+            }
+
+        
+          
+
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+    
