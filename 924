@@ -66,6 +66,7 @@ Console.WriteLine("*");
 Console.WriteLine("\n"); 
 //줄바꾸는 코드
 
+?  근데 왜 나는 가로로 공백이 안 생기고 세로로 생기지?
 
 
 
