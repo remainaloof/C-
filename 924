@@ -3,20 +3,74 @@
 
 
 반복 할 거니까for문을 사용하죠
-for(j=0; j<4; j++)
-{
-Console.WriteLine(" ");
-// printf(" ")
-}
 
-for(j=0 j<1; j++)
-{
-Console.WriteLine("*");
-}
-Console.WriteLine("\n");
 
----- 공백을 만드는 식 -----
+for (int i = 0; i<5; i++)
+{
+
+    for (int j = 0; j<4; j++)
+    {
+        Console.WriteLine(" ");
+
+    }
+
+    for (int j = 0; j<1; j++)
+    {
+        Console.WriteLine("*");
+    }
+    Console.WriteLine("\n");
+
+}
 
 
 -------------------------------------------
+
+
+공백은 하나씩 줄고
+
+
+    for (int j = 0; j<4-i; j++)
+    {
+        Console.WriteLine(" ");
+
+    }
+
+
+별은 두개씩 들어나고 있는 모양일 때
+
+ for (int j = 0; j<2*i+1; j++)
+    {
+        Console.WriteLine("*");
+    }
+
+--------------------------------------------------------
+
+
+다이아몬드 형태로 출력하기
+
+
+
+
+int j;
+
+for(j=0; j<4; j++)
+{
+Console.WriteLine("  ");
+}
+
+for(j=0; j<1; j++)
+{
+Console.WriteLine("*");
+}
+
+Console.WriteLine("\n"); 
+//줄바꾸는 코드
+
+
+
+
+
+
+
+
 
