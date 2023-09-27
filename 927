@@ -1,0 +1,362 @@
+ Console.WriteLine(" 키를 입력하세요 ");
+ int height = Convert.ToInt32 (Console.ReadLine());
+
+ var answer = (height >= 130) ? "탑승가능" : "보호자동반";
+
+
+ Console.WriteLine( answer );
+
+--------------------------------------------------------------
+
+
+ int x = 0b1010;
+ Console.WriteLine(x);
+
+ => 10
+
+ -----------------
+ byte x = 0b1010;
+ byte y = 0b1100;
+ Console.WriteLine(x);
+ Console.WriteLine(y);
+
+
+ ==>
+ 10
+ 12
+
+ ------------------------------------------------------------------------
+
+        byte x = 0b1010;
+        byte y = 0b1100;
+        Console.WriteLine(Convert.ToString(x, 2));
+// 2진수 string으로 바꾸라는 의미
+
+// 
+
+        byte x = 0b1010;
+        byte y = 0b1100;
+        Console.WriteLine($"{Convert.ToString(x, 2)}, {x}");
+        Console.WriteLine($"{Convert.ToString(y, 2)}, {y}");
+
+
+        => 
+        1010, 10
+        1100, 12
+
+        --------------------------------------------------------------------------------
+    Bit And 연산
+    
+Console.WriteLine($"{Convert.ToString(x & y, 2)} = {x & y}");
+
+=>
+1000 = 8
+------------------------------------------------------------------------------------------
+
+
+Console.WriteLine($"XOR: {Convert.ToString(x ^ y, 2).PadLeft(4, '0')} = {x ^ y}");
+Console.WriteLine($"NOT:{Convert.ToString((byte)~x,2)}= {~x}");
+
+
+
+ int a = Convert.ToInt32("0101", 2);
+ int b = Convert.ToInt32("0101", 2);
+ -------------------------------------
+
+ int a = 1;
+ bool result = a == 1;
+ Console.WriteLine(result);
+
+ => True
+
+ -------------------------------------------
+
+
+
+
+    int a = 1;
+    bool result = a == 1;
+    Console.WriteLine("프로그램을 시작합니다");
+
+
+    if (false) // false 일때만 조건문을 실행합니다.
+    {
+
+        Console.WriteLine("조건문을 실행합니다");
+    }
+
+    Console.WriteLine("프로그램을 종료합니다");
+
+}
+---------------------------------------------------------------
+
+
+
+        if (1 == 1)
+
+            Console.WriteLine("[1] 조건문을 실행");
+
+
+
+       ==>
+
+       [1] 조건문을 실행
+
+       ---------------------------------------------------------------------
+
+       
+        // 두개이상은 블록 열고 써야 됨
+        if ( 1 == 1) // ( 괄호안의 내용이  true 여야만 돌아감)
+        {
+            Console.WriteLine("[3] 조건문을 실행");
+            Console.WriteLine("[4] 마지막 조건문");
+
+-------------------------------------------------------------------------------------------------
+int score = 60;
+if ( score >= 60 )
+{
+    Console.WriteLine("합격입니다.");
+
+
+
+}
+
+Console.WriteLine("불합격");
+
+-------------------------------------------------------------
+
+
+
+using System;
+
+
+class Program
+{
+    static void Main()
+    {
+
+        Console.Write("패스워드를 입력하세요:____\b\b\b\b");
+        string? input = Console.ReadLine();
+
+        string? password = "1234";
+        if (password == input)
+        {
+
+            Console.WriteLine(" 로그인 완료!");
+
+        }
+
+        Console.WriteLine("=================");
+        Console.WriteLine(" 프로그램을 종료 합니다");
+
+
+
+
+    }
+}
+
+
+=>
+
+패스워드를 입력하세요:1234
+ 로그인 완료!
+=================
+ 프로그램을 종료 합니다
+
+ -----------------------------------------------------------------------------------
+
+
+
+
+
+ 
+        Console.WriteLine("숫자를 입력하세요");
+        int input_num = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"입력하신값은 {input_num}");
+
+        if (input_num %2 == 0 )
+        {
+            Console.WriteLine("짝수 입니다");
+
+        }
+
+---------------------------------------------------------
+using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("시험 점수를 입력하세요\b\b");
+        int input_num = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"당신의 점수는 {input_num}");
+
+            if(input_num >=80)
+        {
+            Console.WriteLine("우와 정말 잘했다!");
+
+
+        }
+        else
+        {
+            Console.WriteLine("좀 더 공부해봅시다!");
+        }
+    }
+}
+
+
+
+=>
+
+시험 점수를 입력하세요
+89
+당신의 점수는 89
+우와 정말 잘했다!
+
+시험 점수를 입력하세요
+71
+당신의 점수는 71
+좀 더 공부해봅시다!
+
+
+----------------------------------------------------------------------------------
+
+
+ Console.Write("첫 번째 숫자를 입력하세요 : ");
+ int input_num1= Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine($"{input_num1}");
+
+ Console.Write("두 번째 숫자를 입력하세요 : ");
+ int input_num2= Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine($"{input_num2}");
+
+ if ( input_num1 - input_num2 != 0 )
+ {
+     Console.WriteLine($"두 값의 차이는 {input_num1 - input_num2} 입니다. ");
+
+ }
+else
+ {
+     Console.WriteLine("두 값의 차이는 0 입니다.");
+ }
+
+
+
+ ==>
+첫 번째 숫자를 입력하세요 : 50
+50
+두 번째 숫자를 입력하세요 : 40
+40
+두 값의 차이는 10 입니다.
+
+
+첫 번째 숫자를 입력하세요 : 60
+60
+두 번째 숫자를 입력하세요 : 60
+60
+두 값의 차이는 0 입니다.
+
+
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if (input_num %2 != 0 ) 
+        {
+            Console.WriteLine("홀수 입니다");
+
+        }
+    }
+}
+
+===> 
+숫자를 입력하세요
+4
+입력하신값은 4
+짝수 입니다
+
+
+숫자를 입력하세요
+8888
+입력하신값은 8888
+짝수 입니다
+
+숫자를 입력하세요
+3333
+입력하신값은 3333
+홀수 입니다
+-------------------------------------------------
+
+ if (input_num %2 == 0 )
+ {
+     Console.WriteLine("짝수 입니다");
+
+ }
+ //어차피 나머지는 다 홀수이다 라고 표현할떄
+ else
+ {
+     Console.WriteLine("홀수 입니다");
+ }
+
+숫자를 입력하세요
+7777
+입력하신값은 7777
+홀수 입니다
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
