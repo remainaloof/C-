@@ -323,6 +323,331 @@ else
 
 
 
+ Console.WriteLine("성적을 입력하세요 : ");
+ int score = Convert.ToInt32(Console.ReadLine());
+
+ if( score >= 90 )
+ {
+     Console.WriteLine($"점수는 = {score}, 수");
+
+
+ }
+ if ( score >=80)
+ {
+     Console.WriteLine($"점수는 = {score}, 우");
+ }
+
+ if (score >= 70)
+ {
+     Console.WriteLine($"점수는 = {score},미");
+     }
+
+=====================================================================================
+
+
+static void Main()
+{
+    Console.WriteLine("숫자를 입력하세요: ____\b\b\b\b");
+    string? input = Console.ReadLine();
+
+    var outcome = int.TryParse(input, out int rsult);
+    Console.WriteLine($"{outcome}");
+
+   // if (int.TryParse(input, out int result))
+    //{
+
+
+    //}
+
+
+
+
+숫자를 입력하세요: ____
+123ㄹ
+False
+
+
+--------숫자 말고 문자가 나오면 false가 나오도록 함
+
+=======================================================================
+
+
+  Console.Write("숫자를 입력하세요: ____\b\b\b\b");
+  string? input = Console.ReadLine();
+
+  var outcome = int.TryParse(input, out int result);
+ Console.WriteLine(outcome);
+
+  if (outcome)
+  {
+      Console.WriteLine($"입력하신 숫자는 {result}");
+  }
+  else
+  {
+      Console.WriteLine("잘못 입력하셨습니다.");
+  }
+
+=====>
+
+
+숫자를 입력하세요: 33ff
+False
+잘못 입력하셨습니다.
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+    static void Main()
+    {
+
+        Console.WriteLine("길안내 서비스 입니다");
+
+        Console.Write("성별을 입력하세요: __\b\b");
+        string? input = Console.ReadLine();
+
+        var outcome = int.TryParse(input, out int result);
+       
+
+        if (input ==  "여자")
+        {
+            Console.WriteLine("왼쪽 길 입니다");
+        }
+        if ( input == "남자")
+        {
+            Console.WriteLine("오른쪽 길 입니다");
+        }
+        if (outcome)
+        {
+            Console.WriteLine("제대로 입력하세요.");
+        }
+        
+        
+       
+       
+    }
+}
+
+
+
+
+길안내 서비스 입니다
+성별을 입력하세요: 남자
+오른쪽 길 입니다
+
+길안내 서비스 입니다
+성별을 입력하세요: 여자
+왼쪽 길 입니다
+
+
+길안내 서비스 입니다
+성별을 입력하세요: 22
+제대로 입력하세요.
+
+
+
+-----------------------------------------------------------
+
+
+
+
+        Console.WriteLine("길안내 서비스 입니다");
+
+        Console.Write("성별을 입력하세요: __\b\b");
+        string? input = Console.ReadLine();
+
+        string outcome = Console.ReadLine();
+       
+        
+       
+
+        if (input ==  "여자")
+        {
+            Console.WriteLine("왼쪽 길 입니다");
+        }
+        if ( input == "남자")
+        {
+            Console.WriteLine("오른쪽 길 입니다");
+        }
+        if (outcome != "여자")
+        {
+            Console.WriteLine("제대로 입력하세요.");
+        }
+
+----------------------------------------------------------------------------------------
+
+
+
+
+    static void Main()
+    {
+
+        Console.WriteLine("길안내 서비스 입니다");
+
+        Console.Write("성별을 입력하세요: __\b\b");
+        string? input = Console.ReadLine();
+        
+       
+       
+        
+       
+        if (input ==  "남" || input == "남자" || input == "사나이")
+          {
+            Console.WriteLine("왼쪽 길 입니다");
+        }
+         if(input == "여" || input == "여자")
+        {
+            Console.WriteLine("오른쪽 길 입니다");
+        }
+        else
+        {
+            Console.WriteLine("제대로 입력 하십시오...");
+        }
+       
+    }
+}
+
+
+
+==> 
+
+
+길안내 서비스 입니다
+성별을 입력하세요: 몰랑
+제대로 입력 하십시오...
+
+
+길안내 서비스 입니다
+성별을 입력하세요: 여자
+오른쪽 길 입니다
+
+
+-----------
+
+Console.Write("첫번쨰 숫자를 입력하세요__\b\b);
+string first = Console.ReadLine();
+int num1 = Conert.Toint32(first);
+
+//
+
+Console.Write("첫번쨰 숫자를 입력하세요__\b\b);
+string first = Console.ReadLine();
+var outcome1 = int.TryParse(first, out var num1);
+
+-------------------------------------------------------------------------
+outcome2 까지 만들었다고 치고
+
+if ( outcome1 && outcome2 )
+{
+  if ( num1 > num2)
+{
+
+Console.WriteLine ($" 큰값은 {num1} 입니다 ");
+
+
+
+}
+
+
+if ( num1 < num2)
+{
+
+
+
+
+}
+
+else 
+
+{
+
+
+
+}
+
+}
+---------------------------------------------------------------------------------------------
+
+
+ System;
+using System.Reflection;
+
+class lf_subject
+{
+    static void Main()
+    {
+
+        Console.Write("과목을 입력하세요 : ");
+        string? title = Console.ReadLine();
+
+        Console.Write("점수를 입력하세요: ");
+        int score = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"과목은 {title}, 점수는 {score}");
+
+        if (title == "수학")
+        {
+            if (score >= 60) Console.WriteLine("참 잘했어요~");
+            else Console.WriteLine("분발하세요");
+        }
+        else
+        {
+            if (score >= 80) Console.WriteLine("참 잘했어요!~");
+            else Console.WriteLine("헐");
+        }
+
+
+
+
+
+    }
+}
+
+
+
+=====>
+과목을 입력하세요 : 행정법
+점수를 입력하세요: 90
+과목은 행정법, 점수는 90
+참 잘했어요!~
+
+----------------------------------------------------------------------------------------
+
+
+============================================ else 안에 층층이 쌓는 것 ===============================
+
+static void Main ()
+{
+    Console.WriteLine("점수를 입력하세요");
+    int score = Convert.ToInt32(Console.ReadLine());
+
+    if (score >= 90) Console.WriteLine("금메달");
+
+    else
+    {
+        if (score >= 80) Console.WriteLine("은메달");
+        else
+        {
+            if (score >= 70) Console.WriteLine("동메달");
+            else Console.WriteLine("메달이 없습니다.");
+        }
+
+
+===============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
