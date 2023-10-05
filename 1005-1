@@ -1,0 +1,28 @@
+
+===============================
+static void Main()
+{
+int a = 0;
+for ( int i = 0; i < 5; i++)
+{
+
+a = i;
+Console.WriteLine($"a={a}");
+}
+
+Console.WriteLine($"a={a}");
+
+
+
+}
+=======================================
+ CLass 에 대한 내용 공부할 것 !
+ 
+
+
+
+
+
+
+
+
