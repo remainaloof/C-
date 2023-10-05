@@ -1,0 +1,223 @@
+아 날라감 ;
+
+int iter = 0;
+
+while( iter < 3)
+{
+Console.WriteLine ($"안녕하세요 (iter}");
+iter ++;
+}
+
+}
+
+}
+=====================================================================
+
+
+
+ static void Main()
+ {
+     int iter = 0;
+     int sum = 0;
+
+     while ( iter < 101)
+     {
+         //  Console.WriteLine($"count = {iter}");
+         sum += iter;
+         iter++;     ** 증감 표시 하는 것이 중요!
+     }    
+     Console.WriteLine(sum);
+     
+     
+
+ }
+ ==============================================
+int initial = 5;
+
+while ( initial > 0)
+{
+
+Console.WriteLine(initial);
+initial --;
+
+}
+
+}
+}
+=========================================================
+피보나치 수열
+
+
+class Fibonacci
+{
+
+    static void Main()
+    {
+
+        Console.Write("원하는 토끼쌍 수를 입력하세요 : ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        int first = 0, second = 1;
+        int gen = 0; // 세대수
+        Console.WriteLine($"{second}, \t 0");
+
+        while (second <= num)
+        {
+
+
+            gen++;
+            int temp = first + second;
+                first = second;
+                second = temp;
+
+                Console.WriteLine($"{temp}, \t {gen}");
+            
+        
+          
+        }
+      
+
+
+
+
+
+
+        
+        
+       
+    }
+}
+
+    
+=====================================================
+
+
+
+class DoWhile
+{
+    static void Main()
+    {
+
+        int count = 0;
+
+        do
+        {
+            Console.WriteLine($"안녕하세요, {count}");
+            count++;
+        } while(count < 3);
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+=== 동일한것
+while ( count < 3)
+{
+Console.WriteLine($"안녕하세요, {count}");
+count++;
+
+}
+----------------------------------------------------------------------------------
+WHILe 문
+
+==>
+
+
+class DoWhile
+{
+    static void Main()
+    {
+        int s = 0, i = 0;
+
+        do
+        {
+            ++i;
+            s += i;
+        } while (i < 10);
+
+        Console.WriteLine($"1부터 {i} 까지의 합은 {+s}");
+    }
+
+
+
+
+1부터 10 까지의 합은 55
+=======================================
+
+
+
+int j = 1;
+
+do
+{
+// j 값 의 판별 여부와 무관하게 무조건 한 번 반복문을 실행
+Console.WriteLine( j  + " : Hello, World!"); // 1회 출력됨
+j ++;
+}
+while ( j <= 10); // 반복문 1회 실행 후 마지막에 조건식 판별
+                  // => 조건식 찬별 결과가 false 이면 do ~ while 문을 빠져나감
+
+                  Console.WriteLine("반복문 종료 후 j값 : " + j);
+                  // j값이 1증가 해쓰므로 11출력됨
+======================================================================      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
