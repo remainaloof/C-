@@ -1,0 +1,585 @@
+동네에 소문이 퍼지는 과정을 챗gpt 를 이용해서 구현해낸 것.
+메모리 - 램
+RAM 반도체. 16GB GByte 1Byte = 8bit
+T = 10의 12승
+----------------가비지 컬렉터 메모리 할당 ------------------------------
+
+
+//      for (int i  = 0; i < 100; i ++)
+//     {
+//        if (i % 15 == 0)
+//        {
+//           Console.WriteLine("FizzBuzz");
+//        }
+//        else if (1 % 3 == 0)
+//        {
+//           Console.WriteLine("Fizz");
+//       }
+//       else if (i % 5 == 0)
+
+//      {
+//           Console.WriteLine("Buzz");
+//     }
+//     else
+//     {
+//         Console.WriteLine(i);
+//     }
+
+//  }
+//  --------------------------------------------------------------------
+//int a = 5;
+
+
+//  while( a >= 0)
+//  {
+//      Console.WriteLine(a--);
+//  }
+
+// 같은 내용의 문법
+//  ==>
+//  Console.WriteLine(a);
+//  a--;
+
+//--------------------------------------------------------------------
+
+//int count = 0;
+
+//  do // 일단 진행시켜 !
+//  {
+//     Console.WriteLine($"금요일아침, {count}");
+//    count++;
+// }
+//  while (count < 0);
+//==================================================================
+//int a = 0;
+//while(true)
+//{
+       
+//2의 배수이면 건너뛴다.
+
+//if ( a % 2 == 0 )
+//{
+//  continue;
+// }
+
+
+
+
+
+//if ( a >= 5)
+//{
+//   break;
+//}
+
+//  Console.WriteLine(a);
+//a++;    
+
+
+
+//}
+//Console.WriteLine("while문이 종료되었습니다");
+///================================================================
+
+디버깅 빨간색 탁 찍으면 찍은 곳 까지 실행되는 것이다.
+==========================================================================
+
+
+    static void Main()
+    {
+        Console.WriteLine("m좋은 아침입니다");
+        Show("조하농"); // 아 호출했구나 하고 show로 이동한다. 메소드.
+    }
+
+
+
+    static void Show(string name) // 매개변수, parameter
+    {
+        Console.WriteLine($"{name} 님 좋은 아침입니다");
+    }
+
+-----------------------------------------------------------------------
+
+static void Main()
+{
+ 
+    Show("조하농"); // 아 호출했구나 하고 show로 이동한다. 메소드.
+}
+
+
+
+static void Show(string name) // 매개변수, parameter
+{
+    Console.WriteLine($"{name} 님 좋은 아침입니다");
+}
+
+
+------------------------------------------------------------------------------------------
+
+  static void Main()
+  {
+      Hi();
+
+
+  }
+
+
+
+  static void Hi ()
+  {
+      Console.WriteLine("안녕하세요"); 
+  }
+
+  
+
+================================================================
+
+class review
+{
+
+    static string GetString()
+        {
+
+        
+        string return_value = 
+        "반환값 (Return value) ";
+        return return_value;
+
+
+    }
+
+    static void Main ()
+    {
+        string ReturnV = GetString();
+        Console.WriteLine(ReturnV);
+
+    }
+
+
+========================================================================
+
+결과 : 반환값 (Return value)
+=========================================================================
+
+
+
+class SquzreFun
+{
+    static int Square( int x)
+    {
+        int square = x * x;
+        return square;
+    }
+  
+    static void Main()
+    {
+
+        int resquere = Square(2);
+        Console.WriteLine($"2^2 = {resquere}");
+    }
+    //^ 비트 연산에서 or 이지만 수학에서는 제곱을 나타냄
+
+
+
+
+
+
+class SquzreFun
+{
+    static int Square( int x)
+    {
+        int square = x * x;
+        return square;
+    }
+  
+    static void Main()
+    {
+
+        int resquere = Square(2);
+        Console.WriteLine($"2^2 = {resquere}");
+    }
+    //^ 비트 연산에서 or 이지만 수학에서는 제곱을 나타냄
+
+
+
+=================================================================
+
+
+class SquzreFun
+{
+    static int Square( int x)
+    {
+        int square = x * x;
+        return square;
+    }
+  
+    static void Main()
+    {
+
+        int resquere = Square(4);
+        Console.WriteLine($"4^4 = {resquere}");
+    }
+    //^ 비트 연산에서 or 이지만 수학에서는 제곱을 나타냄
+
+==============================================================================================
+
+
+using System;
+class SumDouble
+{
+    // ** 이것이 출력되도록 해보자.
+    //double Return_sum = Sum_double(3.0, 2.7);
+    // Console.WriteLine("입력값은 3.0, 2.7 입니다.");
+    //Console.WriteLine($"두 수의 합은 { return_sum}");
+    // == > 입력값은 3.0, 2.7 입니다.
+    // == > 두 수의 합은 5.7 입니다.
+
+    static double Sum_double (double x , double y)
+    {
+        double sum_double = x + y;
+        return sum_double;
+    }
+    
+    
+    
+    static void Main()
+    {
+        double Return_sum = Sum_double(3.0, 2.7);
+        Console.WriteLine("입력값은3.0,2.7 입니다.");
+        Console.WriteLine($"두 수의 합은 = {Return_sum}");
+    }
+
+
+
+=========================================================================================
+class Default_parameter
+{
+
+static void log ( string message, int level = 1)
+{
+Console.WriteLine($"{message}, {level}");
+
+}
+
+static void Main()
+{
+Log("디버그");
+Log("디버그" , 2);
+
+}
+
+
+
+
+
+}
+
+
+========================
+심심할때 후딱 할 수 있는 플레시 게임을 원해
+보글보글 같은거 !
+보글보글 만 드르 쟈
+===========================================================
+
+ // 첫번째 정수를 입력하세요 :
+  //10
+  //두 번째 정수값을 입력하세요;
+  //5
+  //입력하신 정수값의 최대값은 {max }, 최소값은 {min} 
+
+
+================================================================
+
+
+class MinMax
+{
+ // 첫번째 정수를 입력하세요 :
+  //10
+  //두 번째 정수값을 입력하세요;
+  //5
+  //입력하신 정수값의 최대값은 {max }, 최소값은 {min} 
+
+
+
+
+    static int Max(int x, int y)
+    {
+        int max=( x >= y )? x: y;
+        return max;
+
+    }
+
+
+    static int Min(int x, int y) 
+    {
+        if (x <= y)
+        {
+            return x;
+        }
+        else
+        {
+            return y;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+    static void Main()
+    {
+        Console.WriteLine("첫번째 정수를 입력하세요 : ");
+
+        int number = Convert.ToInt32(Console.ReadLine());
+    
+        
+        Console.WriteLine("두번째 정수를 입력하세요");
+
+        int number_2 = Convert.ToInt32(Console.ReadLine());
+
+        int max =Max(number, number_2);
+        int min = Min(number, number_2);
+
+        Console.WriteLine($"최댓값은 {max} , 최솟값은 {min}");
+    }
+   
+
+
+}
+
+================================================================================
+주인의식 자신감을 가져라!
+잠자리 후에 오히려 자신감 있게 대하라!
+마음껏 웃어주고 즐거워 하시라!
+파도 파도 끝없이 나오는 매력을 발견하게 될 겁니다.
+한번 하고 나서 당연하게 생각하는 순간
+재미와 설렘은 사라질 수밖에 없다.
+서로를 당연하게 생각하지 않는다.
+
+내가 하는건 돼 니가 하는건 안돼 ~ 
+있던걸 사라지게 하는 것
+확정된 건 아무것도 없다
+냉철하게 생각 해보시라!
+============================================================================
+할 때마다 새롭고 매력적인 다채로운 사람이 됩시다!
+=============================================================================
+
+
+나는 가벼운 발걸음, 
+제로 데시벨, 
+우는 소리 없이 
+표정으로 울고 
+그리고 속삭임 꿈 작은 꿈 
+ 
+우는 건 너인데 눈물을 보는 건 언제나 나였다 
+
+===========================================================
+
+class MinMax
+{
+    // 첫번째 정수를 입력하세요 :
+    //10
+    //두 번째 정수값을 입력하세요;
+    //5
+    //입력하신 정수값의 최대값은 {max }, 최소값은 {min} 
+
+
+
+
+  //static void Print(int x)
+  //{
+
+  //    Console.WriteLine($"Int32={x}");
+
+ // }
+
+
+
+
+   //tatic void Print(long x)
+   //
+   //   Console.WriteLine($"Int64 = {x}");
+
+  //}
+
+  //static void Print( double x)
+  //{
+ //     Console.WriteLine($"Double = {x}");
+///
+
+   //tatic void Main()
+    {
+    //  Print(123444444);
+    //  Print(12333123233);
+    //  Print(3.14);
+       //   Console.WriteLine
+//  }
+
+=-==============================================
+
+
+using System;
+class MinMax
+{ 
+
+    static void Hi()
+    {
+        Console.WriteLine("안녕하세요");
+    }
+
+    static void Hi(string message)
+    {
+        Console.WriteLine(message);
+    }
+    
+
+
+
+
+
+
+    static void Main()
+    {
+        Hi();
+        Hi("아무개씨 반갑습니다.");
+    }
+
+
+
+
+
+
+===============================================================
+
+using System;
+class MinMax
+{
+
+    static void Multi()
+    {
+        Console.WriteLine("반갑습니다.");
+    }
+
+    static void Multi (string message)
+    {
+      Console.WriteLine (message);
+    }
+    
+
+
+    static void Main()
+    {
+    Multi();
+    Multi("또 만나요. , 3");
+    }
+
+
+
+
+
+
+
+}
+
+============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
