@@ -1,0 +1,518 @@
+Review day
+
+using System;
+
+class Review
+{
+    static void Main(string[]args)
+    {
+       Hi();
+    }
+
+
+
+     static void Hi() 
+     {
+        Console.WriteLine("Hello world");
+     }
+
+//위에 함수 호출 하는 것
+
+
+
+
+}
+
+---------- ---------------------- --------------- ----------
+
+
+
+
+
+
+class Review
+{
+    
+    static void ShowMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+
+
+    static void Main(string[]args)
+    {
+       ShowMessage("좋은 아침");
+    }
+//쇼 메시지 옆에 단어가 위에 콘솔 라이트라인 메시지로 넘어감;
+
+
+}
+-------------- ---- --- --- --- -- ----------- ----------- -------- -------------------
+class Review
+
+
+static string GetString()
+{
+    return "반환값이 있는 메서드";
+}
+{
+static void Main(string[] args)
+{
+
+string retval = GetString();
+Console.WriteLine(retval);
+
+
+}
+
+
+
+}
+
+
+------------------------------------------ 반환값이 있는 메서드 라는 단어가 출력된다. -------------
+
+class Review
+
+
+
+{
+
+
+    static int SqureFun(int x)
+    {
+        int r = x * x;
+        return r;
+    }
+static void Main(string[] args)
+{
+
+int val = SquereFun(3);
+Console.WriteLine(val);
+
+
+}
+
+
+
+}
+----------------------------결과값 : 9 ----- ------- ---------- ------------- ----------
+
+
+
+
+
+
+
+class Review
+
+
+
+{
+
+
+    static double CircleArea(double r double pi = 3.14)
+    {
+        double a = r * r*pi;
+        return a;
+    }
+static void Main(string[] args)
+{
+
+int val = CircleArea(3);
+Console.WriteLine(val);
+// Console.WriteLine($"원의 넓이 = {val}");
+
+}
+
+
+
+}
+--------------------------------- -------------------------- val 값 출력 -----------------------------
+
+
+class Review
+
+
+
+{
+
+
+static void Sum ( int x, int y) => Console.WriteLine(x + y);
+
+
+
+static void Main (string[] args)
+{
+
+Sum ( 1, 2);
+Sum ( x : 1, y : 2);
+Sum ( y:1 , x:2);
+
+
+}
+
+}
+
+------------------------------------------
+
+메소드 오버로드
+
+
+using System;
+
+
+class MethodOverload
+{
+
+
+
+static void Main ()
+{
+    static void GetNumber(int number) => Console.WriteLine($"Int32: {number}");
+     static void GetNumber(long number) => Console.WriteLine($"Int64: {number}");
+}
+
+static void Main()
+{
+    GetNumber(1018);
+    GetNumber(1018L);
+}
+
+
+
+
+}
+
+---------------------------
+
+
+
+
+
+
+static void Multi() => Console.WriteLine(message);
+static void Multi(string message, int count) => Console.WriteLine(message,count);
+
+static void Multi(string message int count)
+{
+    for(int i = 0; i< count; i++)
+    {
+        Console.WriteLine(message);
+    }
+}
+
+----------------------------
+
+
+
+class Review
+{
+
+static void Main()
+{
+
+
+
+
+}
+
+
+
+
+
+}
+-------------------------------------
+
+using System;
+
+class MyClass
+{
+
+
+    static void Greet() => Comnsole.WriteLine("good morning");
+
+static void Main()
+{
+
+
+Greet();
+
+}
+
+
+
+}
+--------------------------------
+
+using System;
+
+class MyClass
+{
+
+static void Main(string[] args)
+
+{
+ foreach( var args in args)
+ { 
+
+ Console.WriteLine(arg);
+ }
+
+}
+
+}
+
+--------------------------
+
+
+
+
+using System;
+
+class MyClass
+{
+
+static void Main(strin[] args);
+
+{
+if(args.Length == 0)
+{
+    Console.WriteLine("입력된 인수가 없습니다.");
+}
+else
+{
+
+  foreach(var arg in args)
+  {
+    Console.WriteLine($"입력된 인수의 이름은 {args}입니다.");
+
+  }
+
+}    
+
+
+}
+
+
+}
+==============================================
+using System;
+
+class MyClass
+{
+
+
+
+
+
+static void Main()
+{
+
+static int SumNum(int x, int y)=> x+y;
+
+static void Main(string[]args)
+{
+    int sum = SumNum(1,2);
+    Console.WriteLine(sum);
+}
+
+}
+
+}
+----------------------------------------------------
+< math api >
+
+using System;
+
+class MyClass
+{
+
+
+static int MyPow(int x, int p)
+{
+
+    int sum = 1;
+    for (int i = 0; i < p; i++)
+   {
+      sum = sum * x;
+   }
+}
+
+
+
+static void Main(string [] args)
+{
+
+
+int ret = MyPow(1,2);
+// 1을 2번 곱한것 1의 2승
+
+//  int ret = MyPow(2,8);
+Console.WriteLine(ret);
+Console.WriteLine(Math.Pow(2,16)); //api
+}
+
+
+
+
+}
+---------------------------------------------------------
+using System;
+using.Collestions.Generic;
+using System.Linq;
+using.Text;
+using System.Threading.Tasks;
+
+namespace MathExample
+{
+
+class Progran
+{
+// Math class 활용하여 바로 적용하기.
+
+  static void Main (string[]arg);
+  {
+          for(double arg = 0; ang<360; ,arg += 10 )
+          {
+              Console.CursorLeft = 40+ (int)(Math.Cos(arg*Math.PI/180)*20);
+              Console.CursorTop = 12 +_ (int)(Math.Sin(arg*Math.PI/180)*10);
+              Console.Write("*");
+          }
+          //1+e의 i+승 = 0
+          //자연상수 e
+
+
+
+  }
+
+
+
+}
+}
+
+
+---- 이 값 확인. ---- 
+
+//https://afsdzvcx123.tistory.com/entry/C-문법-C-Math-클래스-사용-및-메서드-종류
+
+----------------
+
+    using System;
+
+    public struct Point
+    {
+        public int X;
+        public int Y;
+
+        
+    }
+
+ class struct
+ {
+static void Main(string[]arg)
+{
+
+    Point point;
+    point.X = 1;
+    point.Y=2;
+
+    Console.WriteLine($"x={point.X}, y = {point.Y}");
+    Console.WriteLine($"x={x}, y = {y}");
+}
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
