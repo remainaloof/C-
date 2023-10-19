@@ -1,0 +1,71 @@
+생성자
+
+using System;
+using System.Net.Http.Headers;
+
+//PUBLIC, PRIVATE
+
+struct Monster
+{
+    //생성자(Monster struct Controller)
+    private string name;
+    private int attack;
+    private bool life;
+    public Monster(string name, int attack, bool life)
+    {
+        this.name = name;
+        this.attack = attack;
+        this.life = life;
+    }
+
+    public void Print() => Console.WriteLine($"{this.name},{this.attack},{this.life}");
+
+
+
+    public void SetNmae(string name) => this.name = name;
+    public void GetName() => Console.WriteLine(this.name);
+
+
+
+
+    class StructConstructor
+
+    {
+        static void Main()
+        {
+            Monster monster = new Monster("용가리", 100, true);
+            monster.Print();
+        }
+
+    }
+
+}
+
+
+
+
+
+=============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
