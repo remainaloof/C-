@@ -1,0 +1,55 @@
+using System;
+using System.Net.Http.Headers;
+
+//PUBLIC, PRIVATE
+
+struct Score
+{
+    //데이터 보관
+    //필드. 메서드 = 멤버
+
+
+    public string Name;
+    public int kor;
+    public int Eng;
+    public int Tot;
+    public int Avg;
+    public int Graph;
+
+
+    class Program
+
+    {
+        static void Main()
+        {
+            Score[] scores = new Score[3];
+            scores[0].Name = "홍길동"; scores[0].kor = 100; scores[0].Eng = 90;
+            scores[0].Name = "백두산";
+            scores[0].Name = "잉꺽정";
+
+            for (int I = 0; I < scores.Length; I++)
+            {
+                scores[I].Tot = scores[I].kor + scores[I].Eng;
+                scores[I].Avg = scores[I].Tot / 2;
+                scores[I].Graph = scores[I].Avg / 5;
+
+
+            }
+
+            Console.WriteLine("이름\t 총점\t 평균\t 막대그래프");
+
+            for (int i = 0; i < scores.Length; i++)
+            {
+                Console.Write($"{scores[i].Name}\t {scores[i].Tot}\t {scores[i].Avg}");
+
+                for (int j = 0; j < scores[i].Graph; j++)
+                {
+                    Console.Write("&");
+                }
+                Console.WriteLine();
+            }
+        }
+
+    }
+
+}
