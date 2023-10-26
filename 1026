@@ -1,0 +1,629 @@
+생성자 오버로딩
+
+this 생성을 이용한 포워딩 기법
+
+class Animal
+{
+public string name;
+
+public Animal(): this("No name")
+{
+
+-----------------Animal() 생성자에 this("No name")을 상속한 형태, body 에는 아무것도 없
+this는 Animal 객체를 의미하고 
+
+
+인자를 넣지 않은 채로 클래스 객체를 생성할경우
+Animal()생성자를 실행할 것인데 상속형태로 this("No Name")이 들어가 있어서 자동적으로
+No Name 을 인자로 한 두번째 생성자가 실행이 된다
+
+}
+이거랑
+public Animal(string name)
+{
+
+this.name = name;
+
+}
+
+
+new , virtual, override 
+base Sealed
+
+오버라이딩 기본 형태
+
+class AAA
+{
+public void sleep()
+{
+Console.WriteLine("동물이 자다");
+
+}
+AAA라는 클래스 안에 Sleep 함수 속 출력값;
+
+
+}
+
+
+class Monkey : Animal
+{
+
+Animal을 상속받은 Monkey 클래스
+public void sleep()
+{
+Console.WriteLine("원숭이가 자다");
+}
+----------------------------------------------------- 똑같은내용인것임
+public new void sleep()
+{
+Console.WriteLine("원숭이가 자다");
+}
+------------------------------------------------------
+** 같은 메소드의 형태
+public void Main()
+{
+Monkey monkey = new Monkey();
+monkey.sleep();
+}
+}
+
+==> 원숭이가 자다  
+
+
+-----------------------------------------------------------------------
+
+virtual. override 키워드 사용하기
+
+new 를 사용할떄는 자식클래스의 메소드에만 표시를 해주었다면
+
+virtual 과 override 는 부모 자식 클래스 모두에게 명시적으로 표현해주는 방법입니다
+
+class Animal
+{
+public virtual void sleep()
+{
+Console.WriteLine("동물이 자다");
+}
+
+}
+
+
+class Monkey : Animal
+{
+
+public override void sleep()
+{
+Console.WriteLine("원숭이가 자다");
+
+}
+
+}
+----------------------------------base
+
+class Monkey : Animal
+{
+
+public new void sleep()
+{
+Console.WriteLine("원숭이가 자다");
+base.sleep();
+
+base는 자식 클래스의 부모가 되는 클래스를 의미하고 Animal을 의미함
+
+결과적으로 base.sleep(); 은 Animal.sleep();
+
+
+}
+
+그래서 출력해보면 부모클래스 메소드가 실행이 되는걸 알 수 있다.
+
+}
+
+
+*** sealed class Animal
+{
+
+
+}
+
+class 앞에 sealed 를 붙이면 상속받아서 사용할 수 있었던 모든기능들을 사용할 수 없게 된다.
+
+}
+--------------------------------------------------------------------------------------------
+
+
+
+class Circle
+{
+
+private double radius;
+
+public Circle ( double radius)
+{
+   this.radius = radius;
+
+}
+
+public double GetArea()
+{
+
+return Math.PI * Math.Pow(_radius, 2);
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+class CircleArea
+{
+
+
+static void Main()
+{
+
+Console.WriteLine("원의 반지름을 입력하세요 (cm)");
+double radius_input = Convert.ToDouble(Console.ReadLine());
+
+
+var Cirecle circle = new Circle ( radius_input);
+Console.WriteLine($"원의 넓이는 = {circle.GetArea}cm^2");
+}
+
+
+
+
+
+}
+
+
+원의 반지름을 입력하세요
+입력하면 계산한 값이 나옴
+
+------------------------------------------------------------------
+class Person
+{
+     private string name;
+     public Person()
+     {
+     name = "한홍";
+     }
+
+  public Person(string name)
+  {
+   this.name = name;
+  }
+
+  public string GetName()
+  {
+  return name;
+  }
+
+
+
+}
+
+class Construct
+{
+static void Main()
+{
+var person = new Person();
+person.GerName();
+
+var person_1 = new Person("이숭신");
+Console.WriteLine(person_1.GetName());
+
+}
+
+
+}
+
+-------------------------------------------------------
+
+
+Construct Forwad 방식
+
+clss Say
+{
+private string message = "안녕하세요";
+public Say() => Console.WriteLine(this.message);
+
+public Say(string message) : this() 
+{
+this.message = message;
+Console.WriteLine($"{this.message});
+}
+
+}
+
+
+class ConstructForward
+{
+static void Main()
+{
+var say = new Say();
+
+new Say("좋은 아침 입니다.");
+
+}
+
+
+}
+
+--------------------------------------------------------------
+class Service
+{
+
+
+private string seviceName; //필드
+public void SetName(string seviceName)
+{
+ this.serviceName = serviceName;
+}
+
+public string GetName ()
+{
+return this.serviceName;
+}
+
+}
+
+
+class ReadOnly
+{
+
+static void Main()
+{
+
+Service service = new Service();
+service.SetName("Great Wall");
+string retval = service.GetName();
+Console.WriteLine("retval");
+
+
+
+}
+
+
+
+}
+
+
+
+--------------------------------------------------------------------------
+
+
+DeltaTime.now
+
+DateTime dt;
+
+시간을 저장하는 변수
+
+if(DateTime.TryParse("2023 - 10 - 26", out dt));
+
+저 멘트를 시간 변수(deltaTime dt)로 보내준다.
+{
+
+Console.WriteLine(dt);
+}
+else
+{
+Console.WriteLine("날짜 형식으로 변환할 수 없음");
+}
+
+
+
+if (DateTime.TryParse("2023 - 10 - 26", out DateTime myDate))
+{
+
+Console.WriteLine(myData);
+}
+
+out =  값을 copy 한다.
+
+-------------------------------------------------------------------------------------------------------
+
+Q . 
+
+class ParamsInput
+{
+
+
+
+     static int SumAll (int [] nums)
+   {
+
+   for(int i = 0; i <nums.Length; i++)
+  {
+sum = sum + nums[i];
+   }
+return sum;
+}
+
+   static void Main()
+  {
+
+  int [] nums = new int [] (1,2,3);
+  Console.WriteLine(SumAll(nums));
+
+ }
+
+}
+
+---------------------------------------------------------------------------------
+
+
+
+C# property 문법
+
+-------------------------------------------------------------------------------
+
+static void Main (string [] args)
+{
+TestExample testExample = new TestExample();
+    스택                       Heap
+testExample.runFunction();
+
+}
+
+public class TestExample 
+{
+
+Heap
+
+public int TestInt {get; set;} = 10;
+private int privateVariable = 5;
+
+public void RunFunction()
+{
+int sum = 0; - 스택
+sum - 스택 = this.TestInt + privateariable; - Heap  
+
+
+}
+}
+
+--------------------Stack 지역변수, 매개변수 저장, 컴파일 시점에 크기 할당하는 ((( 정적 할당)))))을 사용
+**컴파일(Compiling)**은 주어진 language로 작성된 컴퓨터 프로그램을 다른 언어의 동등한 프로그램으로 변환하는 프로세스입니다.
+컴파일러는 이러한 작업을 실행하는 소프트웨어입니다. 때로는 이 작업을 "조립(assembling)"또는 "빌드(build)"라고도 합니다.
+
+Heap --- 사용자 관리 영역, 사용자 정의에 의해 할당된 메모리에 저장하거나 해제하는 (((동적 할당)))을 사용
+
+Data 영역 - 전역변수, static 변수, 프로그램이 종료될 때까지 지워지지 안고 컴파일 시점에 크기 할당
+Code 영역 - 소스코드, 기계어로 제어되는 메모리 영역
+
+클래스 안에 1) 속성 (멤버변수 필드 ) - 2) 기능 (메소드 , 함수 )
+
+클래스를 인스턴스화 시키자 => instantiate =>
+
+클래스명 변수명 = new 클래스명 _ 
+
+------------------------------------------
+
+클래스 - 사람 
+이름
+직업
+나이
+성별
+밥먹기
+잠자기
+말하기
+걷기
+
+--------------------
+객체 : 조한홍
+이름 : 조한홍
+직업 : 선생님
+나이 : 43
+성별 : 남
+혈액형 : O
+------------------------
+
+
+
+
+메모리- Ram
+실행할 프로그램의 코드
+----------------------------
+전역변수 정적변수 (데이터 영역 )
+
+런 타임에 크기가 결정됨 - 사용자의 동적 할당 힙영역
+
+컴파일 타임에 크기가 결정됨 지역변수 매개변수 스택영역
+
+
+-------------------------------------------------------------------
+Ram
+
+Progeam Code
+
+Stack memort
+Heap memory
+Gc Heap
+
+public static class --------
+{
+public static int ----- = --- ;
+public const float constaVariable = ----f ;
+
+public static float ---- ()
+{
+return constaVariable;
+
+}
+
+
+---------------------------------------------------------------------
+
+class Function_hh
+{
+
+static void Main()
+{
+Console.WriteLine("Hello, Unity");
+Show();
+
+
+}
+static void Show()
+{
+Console.WriteLine("Hello, Unity");
+
+
+}
+}
+-------------------------------------------------------------------------
+
+https://www.c-sharpcorner.com/Blogs/passing-parameters-to-a-method-in-c-sharp
+
+https://www.youtube.com/watch?v=TzgxcAiHCWA&list=PLdo4fOcmZ0oVxKLQCHpiUWun7vlJJvUiN
+-----------------------------------------------------------------------------------------
+
+static 이란 변수나 메소드에 키워드로 사용된다
+
+static 키워드를 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 생성이 된다
+
+static 변수는 객체를 선언만 해도 메무리가 할당되면 일반적인 변수들이 객체가 새로 생성될 때
+메모리가 초기화 되는 것과 다르게 해당 객체를 계속 반복적으로 생성해도 메모리가 유지 된다는 특징이 있다.
+
+인스턴스 = 객체, 생성 없이 바로 사용 사능하다. 객체를 생서아지 않아도 되니까 편리하고 속도도 빠르다.
+
+
+
+
+
+
+자주 변하지 않는 일정한 값 정적 값 혹은 설정 정보 같은 공용자원에 대한 접근에 있어서 
+매번 메모리에 로딩 혹은 값을 읽어 들이는 것보다
+일종의 전역변수 와 같은 개념을 통해서 접근하는 것이다.
+
+인스턴스 생성 없이 사용 가능하기 때문에 프로그램 내에서 공통으로 사용되는 데이터를 관리할 때 사용한다.
+
+클래스의 일반 멤버 변수는 클래스의 객체가 생성될 때 각 객체마다 따로 생기지만, 정적 변수는 해당 클래스가 처음으로 사용되는 때에
+한번만 초기화되어 계속 동일한 메모리를 사용하게 된다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
