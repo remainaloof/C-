@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+
+namespace list_tutorial
+{
+class Program
+{
+   static void Main(string[] args)
+   {
+     var names = new List <string>
+
+     //List <type > {"<name>" , "Scott","Kendra"  };
+
+     names.Add("Maria");
+     names.Add("Bill");
+     names.Remove("Scott");
+
+     foreach (var name in names)
+     {
+//foreach ( var in )
+     Console.WriteLine(name);
+     }  
+   }
+}
+}
+-----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
