@@ -1,0 +1,274 @@
+moveForward(100);
+turnRight(90);
+moveForward(100);
+turnRight(90);
+moveForward(100);
+turnRight(90);
+moveForward(100);
+
+moveForward(150);
+turnLeft(120);
+moveForward(150);
+turnLeft(60);
+moveForward(150);
+turnLeft(120);
+moveForward(150);
+
+
+-----------------------------------------------------------------------
+
+using System;
+
+//프로퍼티 ( 속성 )
+
+class Car
+{
+    public string Name { get; set; }
+     
+
+}
+
+
+
+
+
+
+
+
+   
+    class PropertyPractice
+    {
+
+        static void Main()
+        {
+        Car car = new Car();
+        car.Name = "제네시스";
+        Console.Write(car.Name);
+
+
+        // 클래스 Car 만들고
+        // 
+        //
+        //
+        //
+        //
+        //
+
+
+        }
+
+----------------------------------------------------------------------------------------
+using System;
+
+//프로퍼티 ( 속성 )
+
+class Publish
+{
+
+    public string? Nmae { get; set; } = "인생c#";
+
+     
+
+}
+
+
+   
+    class PropertyPractice
+    {
+
+        static void Main()
+        {
+        Publish publish = new Publish();
+        Console.Write(publish.Nmae);
+        }
+
+    }
+
+------------------------------------------------------인생 C# 이 출력됨 ----------------------------------
+
+
+using System;
+
+//프로퍼티 ( 속성 )
+
+class Publish
+{
+
+    public string? Nmae { get; set; } = "인생c#";
+    public int Version { get; set; } = 8;
+     
+
+}
+
+
+    class PropertyPractice
+    {
+
+        static void Main()
+        {
+        Publish publish = new Publish();
+        Console.Write(publish.Nmae);
+        Console.WriteLine(publish.Version);
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
