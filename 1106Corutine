@@ -1,0 +1,122 @@
+void Start()
+{
+LoopA();
+
+LoopB();
+// 코루틴 으로 바꿨다면
+StartCoroutine(LoopA()); 이런식으로 넣어주어야 한다. 
+스타트코루틴을 넣어준다! 
+
+
+
+//원래 LoopA 갔다가, 다시 Start 로 넘어와서 LoopB 가는 건데,
+
+LoopA와 LoopB 를 동시에 처리해주는 것이 코루틴 이다.
+
+void LoopA () 를 IEnumerator 로 바꿔 써줘야 한다.
+그리하여 IEnumerator LoopA()
+{
+for(int i  = 0; i<100; i++)
+{
+print("i의 값 = + ㅑ);
+
+}
+
+꼭 넣어줘야 하는 것이 있는데
+yield return null; => 한 프레임 만큼 대기
+yield return WaitForSeconds(11f); 괄호 안의 시간 만큼 대기시켜준다.
+
+
+
+
+}
+
+
+
+
+
+
+
+
+void LoopA()
+{
+for(int i  = 0; i<100; i++)
+{
+print("i의 값 = + ㅑ);
+
+}
+
+
+}
+
+
+==> i 가 0 부터 100 까지 쭉 찍히게 된다.
+
+void LoopB()
+{
+for(int i  = 0; i<100; i++)
+{
+print("i의 값 = + ㅑ);
+
+}
+
+
+}
+
+
+==> i 가 0 부터 100 까지 쭉 찍히게 된다.
+
+-----------------------------------------------------
+
+코루틴을 중단시키는 스탑 코루틴을 하려면
+
+우선 맨 위에서 Coroutine 변수명 ; 으로 변수 선언을 해주고
+
+void Start ()
+{
+코루틴 변수명을 적고 = StartCoroutine(LoopA());
+코루틴 변수명 적고 = StartCoroutine(LoopB());
+이렇게 말고 StartCoroutine("LoopB"); 이런식으로 문자열로 호출 가능!
+
+
+}
+
+그리고 나서 IEnumrator Stooop()
+{
+yield return new WaitforSeconds(2f);
+StopCoroutine(myCoroutine1);
+yield return new WaitforSeconds(2f);
+StopCoroutine(muCoroutine2); 이렇게 말고 
+StopCoroutine("LoopB");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
