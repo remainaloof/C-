@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Android;
+
+public struct POIdata
+{
+    public string name;
+    public string description;
+    public float latitude;
+    public float longitude;
+    public float altitude;
+
+    public POIdata(string name, string description, float latitude, float longitude, float altitude)
+    {
+        this.name = name;
+        this.description = description;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.altitude = altitude;
+    }
+}
+
+이 객체를 사용하여
+
+이 안에 있는 데이터를 초기화 하기 위한
+
+POI info 스크립트를 또 생성준다음 정보 값을 초기화 시켜준다
+
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class POIinfo : MonoBehaviour
+{
+    List<POIdata> poiList = new List<POIdata>();
+
+    POIdata restaurant = new ("식당", "이 동네의 맛집이다.", 37.714170f, 126.743535f, 0f);
+
+    public void Start()
+    {
+        poiList.Add(restaurant);
+    }
+
+}
