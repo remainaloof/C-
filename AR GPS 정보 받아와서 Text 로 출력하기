@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Android;
+
+public class GpsManager : MonoBehaviour
+{
+
+    //GPS 센서에 대한 내용을 받는 것 
+    // GPS global positioning system 위치정보
+    // 위도 경도 고도 의 정보로 구성되고 
+    // 
+    
+    
+        private bool permissionToUseGPS;
+        private string latitude;
+        private string longitude;
+       public TMP_Text text;
+
+        IEnumerator Start()
+        {
+            // 스마트폰의 GPS 권한을 요청
+            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+            {
+                Permission.RequestUserPermission(Permission.FineLocation);
+                // 권한을 요청한 후에 재시작이 필요하므로, 다음 프레임까지 대기
+                yield return new WaitForEndOfFrame();
+            }
+
+            // GPS 권한이 허용되었는지 확인
+            permissionToUseGPS = Permission.HasUserAuthorizedPermission(Permission.FineLocation);
+
+            if (permissionToUseGPS)
+            {
+                // GPS 위치 업데이트 시작
+                Input.location.Start();
+
+                // 위치 업데이트가 활성화되고, 위치 서비스가 사용 가능한 경우
+                if (Input.location.isEnabledByUser)
+                {
+                    while (Input.location.status == LocationServiceStatus.Initializing)
+                        yield return null;
+
+                    if (Input.location.status == LocationServiceStatus.Failed)
+                    {
+                        Debug.Log("Unable to determine device location");
+                        yield break;
+                    }
+
+                    // 위도와 경도 가져오기
+                    latitude = Input.location.lastData.latitude.ToString();
+                    longitude = Input.location.lastData.longitude.ToString();
+
+                     text.text = "Latitude: " + latitude + "\nLongitude: " + longitude;
+
+                Debug.Log("Latitude: " + latitude + ", Longitude: " + longitude);
+                }
+                else
+                {
+                    Debug.Log("Location service is not enabled by user");
+                }
+            }
+            else
+            {
+                Debug.Log("GPS permission denied by user");
+            }
+        }
+
+        void OnDestroy()
+        {
+            // 앱 종료 시 위치 서비스 중지
+            Input.location.Stop();
+        }
+    }
+
