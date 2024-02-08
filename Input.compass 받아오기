@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
+public class CompassManager : MonoBehaviour
+{
+    public TextMeshProUGUI compassText; // Text Mesh Pro 컴포넌트를 할당할 변수
+    public Image image; // 회전시킬 Image 컴포넌트를 할당할 변수
+
+    private float smoothness = 0.5f; // 보간의 부드러움을 조절하는 값. 이 값을 조정해 보세요.
+    private Quaternion targetRotation; // 목표 회전값을 저장할 변수
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Input.compass.enabled = true; // compass를 활성화 합니다.
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float heading = Input.compass.trueHeading; // compass의 방향을 받아옵니다.
+
+        // 목표 회전값을 설정합니다.
+        targetRotation = Quaternion.Euler(0, 0, -heading);
+
+        // Image의 Z 축을 부드럽게 회전시킵니다.
+        image.transform.rotation = Quaternion.Lerp(image.transform.rotation, targetRotation, Time.deltaTime * smoothness);
+
+        // 회전된 각도를 Text Mesh Pro에 출력합니다. 소수점 없이 표시합니다.
+        compassText.text = heading.ToString("F0") + "º";
+    }
+}
+
+UnityEngine.Android 네임스페이스는 Android 플랫폼에 특화된 기능을 사용할 때 필요합니다. 그러나 여기서 우리가 사용하는 Input.compass는 UnityEngine 네임스페이스 안에 있으므로 별도로 UnityEngine.Android를 사용할 필요가 없습니다.
+
+UnityEngine.Android 네임스페이스는 Android 플랫폼의 특정 기능을 사용할 때 필요한 것으로, 예를 들어 Android의 권한 시스템을 직접 제어하거나, Android의 특정 기능을 사용할 때 사용됩니다.
+
+따라서 이 경우에는 UnityEngine.Android 네임스페이스를 사용할 필요가 없습니다. 물론, Android 플랫폼의 특정 기능을 사용하려면 이 네임스페이스를 사용해야 할 수도 있습니다.
+
+
+
+
+
